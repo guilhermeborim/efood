@@ -1,6 +1,6 @@
+import { ModalBody } from '@chakra-ui/react'
 import styled from 'styled-components'
 import cores from '../../styles'
-
 export const ContainerPerfilHeader = styled.section`
   height: 280px;
 `
@@ -61,6 +61,48 @@ export const ContainerPerfilRestaurante = styled.section`
       font-weight: 400;
       color: ${cores.vermelhoClaro};
       padding-bottom: 8px;
+    }
+  }
+`
+export const ModalBodyFood = styled(ModalBody)`
+  display: flex;
+  img {
+    max-width: 280px;
+    height: 280px;
+    margin-bottom: 32px;
+    margin-right: 24px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      padding-top: 16px;
+      padding-bottom: 32px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+    }
+    button {
+      background-color: ${cores.vermelhoClaro};
+      width: 218px;
+      color: ${cores.vermelho};
+      font-size: 14px;
+      font-weight: 700;
+      padding: 4px 0;
+      margin-top: 16px;
     }
   }
 `
