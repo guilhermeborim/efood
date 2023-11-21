@@ -7,10 +7,12 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { adicionar } from '../../redux/reducers/carrinho'
 import cores from '../../styles'
 import * as S from './style'
-interface CardapioItem {
+export interface CardapioItem {
   id: string
   nome: string
   descricao: string
@@ -27,6 +29,7 @@ interface RestaurantePerfilProps {
 }
 
 const Perfil = () => {
+  const dispatch = useDispatch()
   const { onOpen, isOpen, onClose } = useDisclosure()
   const { id } = useParams()
   const [restaurante, setRestaurante] = useState<RestaurantePerfilProps>()
@@ -94,7 +97,12 @@ const Perfil = () => {
                         <h3>{selectedItem.nome}</h3>
                         <p>{selectedItem.descricao}</p>
                         <span>{selectedItem.porcao}</span>
-                        <button>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            dispatch(adicionar({ ...selectedItem }))
+                          }
+                        >
                           Adicionar ao carrinho - R${selectedItem.preco}
                         </button>
                       </div>
