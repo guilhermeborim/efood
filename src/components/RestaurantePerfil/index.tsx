@@ -44,7 +44,12 @@ const Perfil = () => {
     setSelectedItem(item)
     onOpen()
   }
-
+  const formatPrice = (price: number) => {
+    return price.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    })
+  }
   return (
     <>
       {restaurante && (
@@ -81,7 +86,12 @@ const Perfil = () => {
                 </article>
               ))}
               {selectedItem && (
-                <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                <Modal
+                  isOpen={isOpen}
+                  onClose={onClose}
+                  isCentered
+                  blockScrollOnMount={false}
+                >
                   <ModalOverlay />
                   <ModalContent
                     backgroundColor={cores.vermelho}
@@ -103,7 +113,8 @@ const Perfil = () => {
                             dispatch(adicionar({ ...selectedItem }))
                           }
                         >
-                          Adicionar ao carrinho - R${selectedItem.preco}
+                          Adicionar ao carrinho -{' '}
+                          {formatPrice(selectedItem.preco)}
                         </button>
                       </div>
                     </S.ModalBodyFood>

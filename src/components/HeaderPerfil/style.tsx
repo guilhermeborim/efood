@@ -19,15 +19,17 @@ export const HeaderContent = styled.div`
       font-weight: 900;
       flex: 1;
     }
-    p {
-      color: ${cores.vermelho};
-      font-size: 18px;
-      font-weight: 900;
-      flex: 1;
-      text-align: right;
-    }
+
     img {
       width: 125px;
     }
   }
+`
+
+export const CartSpanHeader = styled.span`
+  color: ${cores.vermelho};
+  font-size: 18px;
+  font-weight: 900;
+  flex: 1;
+  text-align: right;
 `
