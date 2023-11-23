@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 const url = 'https://fake-api-tau.vercel.app/api/efood/restaurantes'
-
 export interface RestaurantesProps {
   id: number
   titulo: string
@@ -24,5 +23,4 @@ const ApiRestaurante = () => {
   }, [])
   return data
 }
-
 export default ApiRestaurante

@@ -13,7 +13,7 @@ import { adicionar } from '../../redux/reducers/carrinho'
 import cores from '../../styles'
 import * as S from './style'
 export interface CardapioItem {
-  id: string
+  id: number
   nome: string
   descricao: string
   foto: string
